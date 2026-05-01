@@ -1,9 +1,11 @@
+import FeaturedAnimals from "@/components/FeaturedAnimals";
 import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div>
-      <Hero/>
+    <div className="">
+      <Hero />
+      <FeaturedAnimals />
     </div>
   );
 }

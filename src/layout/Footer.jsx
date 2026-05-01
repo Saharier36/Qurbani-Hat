@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 
 import { Envelope, Handset, MapPin } from "@gravity-ui/icons";
@@ -66,7 +65,6 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>© {new Date().getFullYear()} QurbaniHat. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <p className="text-xs font-semibold">SOCIAL LINKS</p>
             <Link href="#" className="hover:text-white">
               <FaFacebook />
             </Link>

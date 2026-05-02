@@ -5,6 +5,7 @@ import { Button, Avatar } from "@heroui/react";
 import { Bars, PersonPlus, Xmark } from "@gravity-ui/icons";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
+import NavLinks from "@/components/ui/NavLinks";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,16 +35,16 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="hidden md:flex items-center gap-8 font-medium text-gray-600">
+        <ul className="hidden md:flex items-center font-medium text-gray-600 border rounded-full px-2 py-1.5 gap-4 bg-orange-50 shadow-inner">
           <li>
-            <Link href="/" className="hover:text-orange-600">
+            <NavLinks href="/" className="hover:text-orange-600">
               Home
-            </Link>
+            </NavLinks>
           </li>
           <li>
-            <Link href="/animals" className="hover:text-orange-600">
+            <NavLinks href="/animals" className="hover:text-orange-600">
               All Animals
-            </Link>
+            </NavLinks>
           </li>
         </ul>
 

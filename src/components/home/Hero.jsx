@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import { PiCowBold } from "react-icons/pi";
 
 const Hero = () => {
   return (
@@ -36,7 +35,6 @@ const Hero = () => {
                   radius="sm"
                 >
                   Browse Animals
-                  <PiCowBold />
                 </Button>
               </Link>
             </div>

@@ -6,18 +6,17 @@ const AllAnimalsPage = async () => {
   const animals = await getAnimals();
 
   return (
-    
-      <div className="container mx-auto py-12 px-6">
-        <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-slate-800">All Animals</h1>
-          <p className="text-slate-500 mt-1">
-            {animals.length} animals available for Qurbani
-          </p>
-        </div>
-        <AnimalList animals={animals} />
-        
+    <div className="container mx-auto py-12 px-6">
+      <div className="mb-6 text-center">
+        <h1 className="text-3xl font-bold text-slate-800">
+          Explore our all <span className="text-orange-500 italic">Animals</span>
+        </h1>
+        <p className="text-slate-500 mt-1">
+          {animals.length} animals available for Qurbani
+        </p>
       </div>
-    
+      <AnimalList animals={animals} />
+    </div>
   );
 };
 

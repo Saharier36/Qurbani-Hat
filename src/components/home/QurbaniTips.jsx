@@ -9,7 +9,7 @@ const QurbaniTips = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 pb-12 ">
       <h2 className="text-3xl font-bold mb-6 text-slate-800 text-center">
-        Essential Qurbani Tips
+        Essential Qurbani <span className="text-orange-500 italic">Tips</span>
       </h2>
       <ul className="grid sm:grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
         {Tips.map((tip, index) => (

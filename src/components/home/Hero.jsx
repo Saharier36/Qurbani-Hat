@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
               Find Your Perfect <br />
-              <span className="text-orange-500">Qurbani</span> Sacrifice.
+              <span className="text-orange-500 italic">Qurbani</span> Sacrifice.
             </h1>
             <p className="text-lg md:text-xl mb-8 leading-relaxed">
               We provide healthy, organic-fed, and premium quality animals for

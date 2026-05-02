@@ -11,7 +11,7 @@ const FeaturedAnimals = async () => {
     <div className="container mx-auto py-12 px-6">
       <div className="mb-10 text-center">
         <h2 className="text-3xl font-bold text-gray-800">
-          Pick the best livestock for your Qurbani
+          Pick the best animals from our <span className="text-orange-500 italic">QurbaniHat</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">

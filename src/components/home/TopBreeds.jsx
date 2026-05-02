@@ -11,7 +11,7 @@ const TopBreeds = () => {
   return (
     <section className="container mx-auto px-6 pb-12">
       <h2 className="text-3xl font-bold mb-6 text-slate-800 text-center">
-        Our Top Breeds
+        Our Top <span className="text-orange-500 italic">Breeds</span>
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

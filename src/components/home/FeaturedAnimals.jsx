@@ -11,7 +11,8 @@ const FeaturedAnimals = async () => {
     <div className="container mx-auto py-12 px-6">
       <div className="mb-10 text-center">
         <h2 className="text-3xl font-bold text-gray-800">
-          Pick the best animals from our <span className="text-orange-500 italic">QurbaniHat</span>
+          Pick the best animals from our{" "}
+          <span className="text-orange-500 italic">QurbaniHat</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -31,7 +32,7 @@ const FeaturedAnimals = async () => {
                 <h4 className="font-semibold text-gray-800 text-sm truncate">
                   {animal.name}
                 </h4>
-                <p className="text-orange-600 font-bold text-sm shrink-0 ml-2">
+                <p className="text-emerald-600 font-bold text-sm shrink-0 ml-2">
                   {animal.price.toLocaleString()}tk
                 </p>
               </div>

@@ -81,7 +81,7 @@ const AnimalList = ({ animals }) => {
             </div>
 
             <div className="p-3">
-              <h2 className="font-semibold text-slate-800 text-sm">
+              <h2 className="font-bold text-slate-800 text-lg">
                 {animal.name}
               </h2>
               <p className="text-xs text-slate-500 mt-1">
@@ -89,7 +89,7 @@ const AnimalList = ({ animals }) => {
               </p>
 
               <div className="flex items-center justify-between mt-2">
-                <span className="text-orange-600 font-bold text-sm">
+                <span className="text-emerald-600 font-bold text-sm">
                   {animal.price.toLocaleString()} tk
                 </span>
                 <span className="text-xs text-slate-500">

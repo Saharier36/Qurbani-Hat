@@ -37,12 +37,12 @@ const Navbar = () => {
 
         <ul className="hidden md:flex items-center font-medium text-gray-600 border rounded-full px-2 py-1.5 gap-4 bg-orange-50 shadow-inner">
           <li>
-            <NavLinks href="/" className="hover:text-orange-600">
+            <NavLinks href="/">
               Home
             </NavLinks>
           </li>
           <li>
-            <NavLinks href="/animals" className="hover:text-orange-600">
+            <NavLinks href="/animals">
               All Animals
             </NavLinks>
           </li>

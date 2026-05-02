@@ -29,7 +29,7 @@ const Navbar = () => {
 
           <Link href="/" className="flex items-center gap-2">
             <Image src={logo} alt="QurbaniHat Logo" height={50} width={50} />
-            <span className="text-xl font-bold text-orange-600 tracking-tight">
+            <span className="text-xl font-bold text-orange-600">
               Qurbani<span className="text-gray-800">Hat</span>
             </span>
           </Link>
@@ -37,14 +37,10 @@ const Navbar = () => {
 
         <ul className="hidden md:flex items-center font-medium text-gray-600 border rounded-full px-2 py-1.5 gap-4 bg-orange-50 shadow-inner">
           <li>
-            <NavLinks href="/">
-              Home
-            </NavLinks>
+            <NavLinks href="/">Home</NavLinks>
           </li>
           <li>
-            <NavLinks href="/animals">
-              All Animals
-            </NavLinks>
+            <NavLinks href="/animals">All Animals</NavLinks>
           </li>
         </ul>
 
@@ -65,27 +61,27 @@ const Navbar = () => {
               </Button>
             </div>
           ) : (
-            <>
-              <Button
-                as={Link}
-                href="/login"
-                variant="light"
-                className="font-semibold text-gray-700 hover:text-orange-600"
-                radius="md"
-              >
-                Login
-              </Button>
+            <div>
+              <Link href="/auth/login">
+                <Button
+                  variant="light"
+                  className="font-semibold text-gray-700 hover:text-orange-600"
+                  radius="md"
+                >
+                  Login
+                </Button>
+              </Link>
 
-              <Button
-                as={Link}
-                href="/register"
-                className="font-semibold text-white bg-orange-600 hover:bg-orange-700"
-                radius="md"
-              >
-                <span className="hidden sm:inline">Register</span>
-                <PersonPlus className="sm:hidden" size={18} />
-              </Button>
-            </>
+              <Link href="/auth/register">
+                <Button
+                  className="font-semibold text-white bg-orange-600 hover:bg-orange-700"
+                  radius="md"
+                >
+                  <span className="hidden sm:inline">Register</span>
+                  <PersonPlus className="sm:hidden" size={18} />
+                </Button>
+              </Link>
+            </div>
           )}
         </div>
       </div>

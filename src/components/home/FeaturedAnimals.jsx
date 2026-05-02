@@ -10,12 +10,11 @@ const FeaturedAnimals = async () => {
   return (
     <div className="container mx-auto py-12 px-6">
       <div className="mb-10 text-center">
-        <h2 className="text-3xl font-bold text-gray-800">Featured Animals</h2>
-        <p className="text-gray-500">
+        <h2 className="text-3xl font-bold text-gray-800">
           Pick the best livestock for your Qurbani
-        </p>
+        </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {featuredAnimals.map((animal) => (
           <Card key={animal.id} shadow="sm" className="border border-gray-100">
             <div className="h-56 relative">
@@ -27,26 +26,29 @@ const FeaturedAnimals = async () => {
               />
             </div>
 
-            <div className="flex flex-col items-start p-5">
-              <div className="flex justify-between w-full mb-2">
-                <h4 className="font-bold text-xl text-gray-800">
+            <div className="p-3">
+              <div className="flex justify-between items-start mb-1">
+                <h4 className="font-semibold text-gray-800 text-sm truncate">
                   {animal.name}
                 </h4>
-                <p className="text-orange-600 font-bold text-lg">
-                  {animal.price}tk
+                <p className="text-orange-600 font-bold text-sm shrink-0 ml-2">
+                  {animal.price.toLocaleString()}tk
                 </p>
               </div>
-              <p className="text-sm text-gray-500 mb-4">
-                {animal.breed} • {animal.weight}kg
+              <p className="text-xs text-gray-500">
+                {animal.breed} · {animal.weight}kg
               </p>
-              <Link href={`/animals/${animal.id}`} className="w-full">
-                <Button
-                  className="w-full bg-orange-600 text-white font-bold"
-                  radius="sm"
-                >
-                  View Details
-                </Button>
-              </Link>
+              <div className="mt-3">
+                <Link href={`/animals/${animal.id}`} className="w-full">
+                  <Button
+                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold"
+                    size="sm"
+                    radius="sm"
+                  >
+                    View Details
+                  </Button>
+                </Link>
+              </div>
             </div>
           </Card>
         ))}

@@ -1,7 +1,7 @@
-import FeaturedAnimals from "@/components/FeaturedAnimals";
-import Hero from "@/components/Hero";
-import QurbaniTips from "@/components/QurbaniTips";
-import TopBreeds from "@/components/TopBreeds";
+import FeaturedAnimals from "@/components/home/FeaturedAnimals";
+import Hero from "@/components/home/Hero";
+import QurbaniTips from "@/components/home/QurbaniTips";
+import TopBreeds from "@/components/home/TopBreeds";
 
 export default function Home() {
   return (

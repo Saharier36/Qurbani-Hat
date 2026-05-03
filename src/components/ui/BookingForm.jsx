@@ -7,7 +7,6 @@ import {
   Input,
   FieldError,
   TextArea,
-  Description,
 } from "@heroui/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -15,7 +14,7 @@ import toast from "react-hot-toast";
 const BookingForm = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleBooking = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
     toast.success("Booking Successful!");
@@ -23,7 +22,7 @@ const BookingForm = () => {
   };
 
   return (
-    <>
+    <div>
       <Button
         onPress={() => setIsOpen(true)}
         className="w-full py-6 text-lg bg-orange-600 hover:bg-orange-700 rounded-xl"
@@ -42,7 +41,7 @@ const BookingForm = () => {
               <Modal.Body>
                 <form
                   id="booking-form"
-                  onSubmit={handleBooking}
+                  onSubmit={onSubmit}
                   className="flex flex-col gap-4"
                 >
                   <TextField
@@ -121,7 +120,7 @@ const BookingForm = () => {
           </Modal.Container>
         </Modal.Backdrop>
       </Modal>
-    </>
+    </div>
   );
 };
 

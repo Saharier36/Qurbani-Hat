@@ -1,10 +1,9 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Avatar, Button, Card, Chip, Separator, Spinner } from "@heroui/react";
+import { Avatar, Card, Chip, Separator, Spinner } from "@heroui/react";
 import { HiOutlineIdentification } from "react-icons/hi";
 import { BiCalendar, BiEnvelope } from "react-icons/bi";
-import { MdOutlineManageAccounts } from "react-icons/md";
-import Link from "next/link";
+import UpdateUser from "@/components/ui/UpdateUser";
 
 const ProfilePage = () => {
   const userData = authClient.useSession();
@@ -29,7 +28,7 @@ const ProfilePage = () => {
               alt={user.name}
               referrerPolicy="no-referrer"
             />
-            <Avatar.Fallback>
+            <Avatar.Fallback className="text-4xl">
               {user.name?.charAt(0).toUpperCase()}
             </Avatar.Fallback>
           </Avatar>
@@ -86,15 +85,7 @@ const ProfilePage = () => {
 
           <Separator className="w-full" />
 
-          <Link href="/" className="w-full">
-            <Button
-              fullWidth
-              className="bg-emerald-700 hover:bg-emerald-800 rounded-xl"
-            >
-              <MdOutlineManageAccounts size={14} />
-              Update your Profile
-            </Button>
-          </Link>
+          <UpdateUser />
         </div>
       </Card>
     </main>

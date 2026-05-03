@@ -47,19 +47,19 @@ const LogInPage = () => {
     <div className="min-h-screen flex">
       <div className="hidden lg:flex lg:w-[44%] relative flex-col justify-between p-10">
         <Image
-          src="https://images.unsplash.com/photo-1568794045709-edaad184e7da?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1609954111457-b377c9743c16?q=80&w=764&auto=format&fit=crop"
           alt="Qurbani livestock"
           fill
           className="object-cover rounded-r-4xl"
         />
 
-        <p className="relative z-10 font-bold text-xl">QurbaniHat</p>
+        <p className="relative z-10 font-bold text-xl text-white">QurbaniHat</p>
 
         <div className="relative z-10">
-          <h2 className="text-3xl font-bold mb-3">
+          <h2 className="text-3xl text-white font-bold mb-3">
             Your Trusted <br /> Qurbani Marketplace
           </h2>
-          <p className="text-sm font-semibold">
+          <p className="text-sm text-white font-semibold">
             Find the best livestock for your Eid-ul-Adha celebration
           </p>
         </div>
@@ -168,7 +168,10 @@ const LogInPage = () => {
               <span className="flex-1 h-px bg-gray-200" />
             </div>
 
-            <Button onClick={GoogleSignIn} className="w-full bg-slate-700 hover:bg-slate-800 rounded-xl">
+            <Button
+              onClick={GoogleSignIn}
+              className="w-full bg-slate-700 hover:bg-slate-800 rounded-xl"
+            >
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <path
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"

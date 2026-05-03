@@ -54,7 +54,7 @@ const RegisterPage = () => {
     <div className="min-h-screen flex">
       <div className="hidden lg:flex lg:w-[44%] relative flex-col justify-between p-10">
         <Image
-          src="https://images.unsplash.com/photo-1560888126-5c13ad3f9345?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1560888126-5c13ad3f9345?q=80&w=1171&auto=format&fit=crop"
           alt="Qurbani livestock"
           fill
           className="object-cover rounded-r-4xl"
@@ -190,7 +190,10 @@ const RegisterPage = () => {
               <span className="flex-1 h-px bg-gray-200" />
             </div>
 
-            <Button onClick={GoogleSignIn} className="w-full bg-slate-700 hover:bg-slate-800 rounded-xl">
+            <Button
+              onClick={GoogleSignIn}
+              className="w-full bg-slate-700 hover:bg-slate-800 rounded-xl"
+            >
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <path
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"

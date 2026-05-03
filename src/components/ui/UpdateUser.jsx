@@ -38,7 +38,7 @@ const UpdateUser = () => {
         Update your Profile
       </Button>
 
-      <Modal state={{ isOpen, onOpenChange: setIsOpen }}>
+      <Modal state={{ isOpen, setIsOpen }}>
         <Modal.Backdrop>
           <Modal.Container>
             <Modal.Dialog className="bg-[#F7F1E1]">

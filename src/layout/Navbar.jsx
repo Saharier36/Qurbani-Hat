@@ -6,10 +6,17 @@ import { Bars, PersonPlus, Xmark } from "@gravity-ui/icons";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import NavLinks from "@/components/ui/NavLinks";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isLoggedIn = false;
+
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+
+  const signOut = async () => {
+    await authClient.signOut();
+  };
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md shadow-sm">
@@ -45,15 +52,20 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2">
-          {isLoggedIn ? (
+          {user ? (
             <div className="flex items-center gap-3">
               <Avatar>
                 <Avatar.Image
-                  src="https://xsgames.co/randomusers/avatar.php?g=male"
+                  src={user?.image}
                   alt="user-avatar"
+                  referrerPolicy="no-referrer"
                 />
+                <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
               </Avatar>
-              <Button className="bg-orange-600 hover:bg-orange-700">
+              <Button
+                onClick={signOut}
+                className="bg-orange-600 hover:bg-orange-700"
+              >
                 Logout
               </Button>
             </div>

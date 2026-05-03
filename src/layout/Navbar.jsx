@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Button, Avatar } from "@heroui/react";
+import { Button, Avatar, Spinner } from "@heroui/react";
 import { Bars, PersonPlus, Xmark } from "@gravity-ui/icons";
 import Image from "next/image";
 import logo from "@/assets/logo.png";
@@ -49,6 +49,9 @@ const Navbar = () => {
           <li>
             <NavLinks href="/animals">All Animals</NavLinks>
           </li>
+          <li>
+            <NavLinks href="/profile">Profile</NavLinks>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">
@@ -57,10 +60,12 @@ const Navbar = () => {
               <Avatar>
                 <Avatar.Image
                   src={user?.image}
-                  alt="user-avatar"
+                  alt={user.name}
                   referrerPolicy="no-referrer"
                 />
-                <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                <Avatar.Fallback>
+                  {user?.name.charAt(0).toUpperCase()}
+                </Avatar.Fallback>
               </Avatar>
               <Button
                 onClick={signOut}

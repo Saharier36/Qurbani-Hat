@@ -1,4 +1,5 @@
 import { Card } from "@heroui/react";
+import ScrollAnimation from "../ui/ScrollAnimation";
 
 const TopBreeds = () => {
   const breeds = [
@@ -16,16 +17,17 @@ const TopBreeds = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {breeds.map((breed) => (
-          <Card
-            key={breed.id}
-            shadow="sm"
-            className="p-5 flex flex-col items-center justify-center border-2 border-orange-500 bg-[#F7F1E1] shadow-lg"
-          >
-            <h3 className="font-bold text-xl text-slate-800 truncate">
-              {breed.name}
-            </h3>
-            <p className="uppercase font-semibold mt-1">{breed.category}</p>
-          </Card>
+          <ScrollAnimation key={breed.id}>
+            <Card
+              shadow="sm"
+              className="p-5 flex flex-col items-center justify-center border-2 border-orange-500 bg-[#F7F1E1] shadow-lg"
+            >
+              <h3 className="font-bold text-xl text-slate-800 truncate">
+                {breed.name}
+              </h3>
+              <p className="uppercase font-semibold mt-1">{breed.category}</p>
+            </Card>
+          </ScrollAnimation>
         ))}
       </div>
     </section>

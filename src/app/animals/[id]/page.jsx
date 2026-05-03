@@ -18,6 +18,15 @@ const AnimalDetailsPage = async ({ params }) => {
   return (
     <div className="min-h-screen py-12 px-6">
       <div className="container mx-auto">
+        <div className="container mx-auto mb-10 text-center">
+          <h2 className="text-3xl font-bold text-slate-800">
+            Reserve Your Animal{" "}
+            <span className="text-orange-500 italic">Before It&apos;s Gone</span>
+          </h2>
+          <p className="text-slate-500 mt-1">
+            Limited stock available. Book now and celebrate Eid with confidence.
+          </p>
+        </div>
         <div className="flex flex-col lg:flex-row rounded-3xl overflow-hidden shadow border bg-white">
           <div className="relative lg:w-[45%] min-h-72 lg:min-h-140">
             <Image

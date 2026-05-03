@@ -11,6 +11,7 @@ import {
   ListBoxItem,
   Select,
 } from "@heroui/react";
+import ScrollAnimation from "./ScrollAnimation";
 
 const AnimalList = ({ animals }) => {
   const [sortOrder, setSortOrder] = useState("default");
@@ -61,54 +62,56 @@ const AnimalList = ({ animals }) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {sortAnimals.map((animal) => (
-          <Card key={animal.id} shadow="sm">
-            <div className="relative h-56 w-full">
-              <Image
-                src={animal.image}
-                alt={animal.name}
-                fill
-                className="object-cover rounded-lg"
-              />
-              <div className="absolute top-2 left-2">
-                <Chip
-                  size="sm"
-                  variant="flat"
-                  className="bg-white/90 text-slate-800 text-xs"
-                >
-                  {animal.type}
-                </Chip>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h2 className="font-bold text-slate-800 text-lg">
-                {animal.name}
-              </h2>
-              <p className="text-xs text-slate-500 mt-1">
-                {animal.breed} · {animal.location}
-              </p>
-
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-emerald-600 font-bold text-sm">
-                  {animal.price.toLocaleString()} tk
-                </span>
-                <span className="text-xs text-slate-500">
-                  {animal.weight} kg
-                </span>
-              </div>
-
-              <div className="mt-3">
-                <Link href={`/animals/${animal.id}`} className="w-full">
-                  <Button
-                    className="w-full bg-orange-600 hover:bg-orange-700"
+          <ScrollAnimation key={animal.id}>
+            <Card shadow="sm">
+              <div className="relative h-56 w-full">
+                <Image
+                  src={animal.image}
+                  alt={animal.name}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+                <div className="absolute top-2 left-2">
+                  <Chip
                     size="sm"
+                    variant="flat"
+                    className="bg-white/90 text-slate-800 text-xs"
                   >
-                    View Details
-                  </Button>
-                </Link>
+                    {animal.type}
+                  </Chip>
+                </div>
               </div>
-            </div>
-          </Card>
+
+              <div className="p-3">
+                <h2 className="font-bold text-slate-800 text-lg">
+                  {animal.name}
+                </h2>
+                <p className="text-xs text-slate-500 mt-1">
+                  {animal.breed} · {animal.location}
+                </p>
+
+                <div className="flex items-center justify-between mt-2">
+                  <span className="text-emerald-600 font-bold text-sm">
+                    {animal.price.toLocaleString()} tk
+                  </span>
+                  <span className="text-xs text-slate-500">
+                    {animal.weight} kg
+                  </span>
+                </div>
+
+                <div className="mt-3">
+                  <Link href={`/animals/${animal.id}`} className="w-full">
+                    <Button
+                      className="w-full bg-orange-600 hover:bg-orange-700"
+                      size="sm"
+                    >
+                      View Details
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </Card>
+          </ScrollAnimation>
         ))}
       </div>
     </div>

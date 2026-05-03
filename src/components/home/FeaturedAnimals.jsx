@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card, Button } from "@heroui/react";
 import Image from "next/image";
 import { getAnimals } from "@/service/api";
+import ScrollAnimation from "../ui/ScrollAnimation";
 
 const FeaturedAnimals = async () => {
   const animals = await getAnimals();
@@ -17,40 +18,42 @@ const FeaturedAnimals = async () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {featuredAnimals.map((animal) => (
-          <Card key={animal.id} shadow="sm" className="border border-gray-100">
-            <div className="h-56 relative">
-              <Image
-                src={animal.image}
-                alt={animal.name}
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
+          <ScrollAnimation key={animal.id}>
+            <Card shadow="sm" className="border border-gray-100">
+              <div className="h-56 relative">
+                <Image
+                  src={animal.image}
+                  alt={animal.name}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
 
-            <div className="p-3">
-              <div className="flex justify-between items-start mb-1">
-                <h4 className="font-semibold text-gray-800 text-sm truncate">
-                  {animal.name}
-                </h4>
-                <p className="text-emerald-600 font-bold text-sm shrink-0 ml-2">
-                  {animal.price.toLocaleString()}tk
+              <div className="p-3">
+                <div className="flex justify-between items-start mb-1">
+                  <h4 className="font-semibold text-gray-800 text-sm truncate">
+                    {animal.name}
+                  </h4>
+                  <p className="text-emerald-600 font-bold text-sm shrink-0 ml-2">
+                    {animal.price.toLocaleString()}tk
+                  </p>
+                </div>
+                <p className="text-xs text-gray-500">
+                  {animal.breed} · {animal.weight}kg
                 </p>
+                <div className="mt-3">
+                  <Link href={`/animals/${animal.id}`} className="w-full">
+                    <Button
+                      className="w-full bg-orange-600 hover:bg-orange-700"
+                      size="sm"
+                    >
+                      View Details
+                    </Button>
+                  </Link>
+                </div>
               </div>
-              <p className="text-xs text-gray-500">
-                {animal.breed} · {animal.weight}kg
-              </p>
-              <div className="mt-3">
-                <Link href={`/animals/${animal.id}`} className="w-full">
-                  <Button
-                    className="w-full bg-orange-600 hover:bg-orange-700"
-                    size="sm"
-                  >
-                    View Details
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </ScrollAnimation>
         ))}
       </div>
     </div>

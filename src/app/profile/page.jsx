@@ -19,7 +19,14 @@ const ProfilePage = () => {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-4">
+    <main className="min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="mb-6 text-center">
+        <h1 className="text-3xl font-bold text-slate-800">
+          Welcome,{" "}
+          <span className="text-orange-500 italic">{user.name}</span>
+        </h1>
+        <p className="text-slate-500 mt-1">Here&apos;s your account overview.</p>
+      </div>
       <Card className="w-full max-w-sm">
         <div className="flex flex-col items-center gap-4 py-8 px-6">
           <Avatar className="w-20 h-20 text-2xl">

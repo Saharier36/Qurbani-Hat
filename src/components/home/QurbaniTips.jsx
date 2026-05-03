@@ -1,3 +1,5 @@
+import ScrollAnimation from "../ui/ScrollAnimation";
+
 const QurbaniTips = () => {
   const Tips = [
     "Verify the age: Cattle must be at least 2 years old, and goats/sheep at least 1 year old.",
@@ -13,12 +15,16 @@ const QurbaniTips = () => {
       </h2>
       <ul className="grid sm:grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
         {Tips.map((tip, index) => (
-          <li key={index} className="flex gap-4">
-            <span className="text-orange-600 font-black italic">
-              {index + 1}.
-            </span>
-            <p className="text-slate-700 leading-relaxed font-medium">{tip}</p>
-          </li>
+          <ScrollAnimation key={index}>
+            <li className="flex gap-4">
+              <span className="text-orange-600 font-black italic">
+                {index + 1}.
+              </span>
+              <p className="text-slate-700 leading-relaxed font-medium">
+                {tip}
+              </p>
+            </li>
+          </ScrollAnimation>
         ))}
       </ul>
     </div>

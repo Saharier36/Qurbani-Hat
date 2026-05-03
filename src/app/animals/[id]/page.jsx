@@ -54,7 +54,7 @@ const AnimalDetailsPage = async ({ params }) => {
               {data.map(({ label, value }) => (
                 <div
                   key={label}
-                  className="bg-orange-50 rounded-2xl px-4 py-3 shadow-inner"
+                  className="bg-[#F7F1E1] rounded-2xl px-4 py-3 shadow-inner"
                 >
                   <p className="text-xs font-semibold uppercase text-gray-400 mb-0.5">
                     {label}
@@ -70,7 +70,7 @@ const AnimalDetailsPage = async ({ params }) => {
               </p>
               <p className="text-sm text-gray-600">{animal.description}</p>
             </div>
-            
+
             <div className="border-t border-gray-100 pt-5 mt-auto">
               <BookingForm />
             </div>

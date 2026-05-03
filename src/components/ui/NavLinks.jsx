@@ -10,7 +10,7 @@ const NavLinks = ({ href, children }) => {
   return (
     <Link
       href={href}
-      className={`${isActive ? "w-30 bg-orange-600 text-white rounded-full px-4 py-1 text-center font-medium shadow-md" : ""}`}
+      className={`${isActive ? "w-30 bg-orange-600 text-white rounded-full px-4 py-1 text-center font-medium shadow" : ""}`}
     >
       {children}
     </Link>

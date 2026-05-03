@@ -30,11 +30,11 @@ const AnimalList = ({ animals }) => {
           className="w-44"
           placeholder="Sort by price"
         >
-          <Select.Trigger className="bg-orange-600 text-white text-sm font-medium px-5 py-1.5 rounded-full hover:bg-orange-700">
+          <Select.Trigger className="bg-orange-600 font-medium rounded-full hover:bg-orange-600">
             <Select.Value className="text-white" />
             <Select.Indicator className="text-white" />
           </Select.Trigger>
-          <Select.Popover className=" border rounded-xl shadow-lg">
+          <Select.Popover className="rounded-xl shadow-lg">
             <ListBox>
               <ListBoxItem
                 id="default"
@@ -100,9 +100,8 @@ const AnimalList = ({ animals }) => {
               <div className="mt-3">
                 <Link href={`/animals/${animal.id}`} className="w-full">
                   <Button
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold"
+                    className="w-full bg-orange-600 hover:bg-orange-700"
                     size="sm"
-                    radius="sm"
                   >
                     View Details
                   </Button>

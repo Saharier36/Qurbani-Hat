@@ -42,9 +42,8 @@ const FeaturedAnimals = async () => {
               <div className="mt-3">
                 <Link href={`/animals/${animal.id}`} className="w-full">
                   <Button
-                    className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold"
+                    className="w-full bg-orange-600 hover:bg-orange-700"
                     size="sm"
-                    radius="sm"
                   >
                     View Details
                   </Button>

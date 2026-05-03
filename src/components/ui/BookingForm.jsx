@@ -1,5 +1,14 @@
 "use client";
-import { Button, Modal, TextField, Label, Input } from "@heroui/react";
+import {
+  Button,
+  Modal,
+  TextField,
+  Label,
+  Input,
+  FieldError,
+  TextArea,
+  Description,
+} from "@heroui/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -17,7 +26,7 @@ const BookingForm = () => {
     <>
       <Button
         onPress={() => setIsOpen(true)}
-        className="w-full bg-orange-600 text-white font-semibold py-6 rounded-full text-lg hover:bg-orange-700"
+        className="w-full py-6 text-lg bg-orange-600 hover:bg-orange-700 rounded-xl"
       >
         Book This Animal
       </Button>
@@ -25,7 +34,7 @@ const BookingForm = () => {
       <Modal state={{ isOpen, onOpenChange: setIsOpen }}>
         <Modal.Backdrop>
           <Modal.Container>
-            <Modal.Dialog>
+            <Modal.Dialog className="bg-[#F7F1E1]">
               <Modal.Header>
                 <Modal.Heading>Book Your Qurbani Animal</Modal.Heading>
               </Modal.Header>
@@ -36,24 +45,58 @@ const BookingForm = () => {
                   onSubmit={handleBooking}
                   className="flex flex-col gap-4"
                 >
-                  <TextField isRequired>
-                    <Label>Full Name</Label>
-                    <Input placeholder="Enter your name" />
+                  <TextField
+                    isRequired
+                    name="name"
+                    validate={(value) => {
+                      if (value.length < 3) {
+                        return "Name must be at least 3 characters";
+                      }
+                      return null;
+                    }}
+                  >
+                    <Label>Name</Label>
+                    <Input placeholder="Enter your Name" />
+                    <FieldError />
                   </TextField>
 
-                  <TextField isRequired>
+                  <TextField
+                    isRequired
+                    name="phone"
+                    type="tel"
+                    validate={(value) => {
+                      if (value.length < 11) {
+                        return "Phone number must be at least 11 characters";
+                      }
+                      return null;
+                    }}
+                  >
                     <Label>Phone Number</Label>
-                    <Input placeholder="+880 1XXX-XXXXXX" type="tel" />
+                    <Input placeholder="+880 1XXX-XXXXXX" />
+                    <FieldError />
                   </TextField>
 
-                  <TextField>
+                  <TextField
+                    isRequired
+                    name="email"
+                    type="email"
+                    validate={(value) => {
+                      if (
+                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
+                      ) {
+                        return "Please enter a valid email address";
+                      }
+                      return null;
+                    }}
+                  >
                     <Label>Email</Label>
-                    <Input placeholder="you@example.com" type="email" />
+                    <Input placeholder="you@example.com" />
+                    <FieldError />
                   </TextField>
 
-                  <TextField>
+                  <TextField isRequired name="address">
                     <Label>Address</Label>
-                    <Input placeholder="Enter your full address" type="text" />
+                    <TextArea placeholder="Enter your full address" />
                   </TextField>
                 </form>
               </Modal.Body>
@@ -62,7 +105,7 @@ const BookingForm = () => {
                 <Button
                   variant="secondary"
                   onPress={() => setIsOpen(false)}
-                  className="text-orange-500"
+                  className="text-orange-500 bg-orange-100"
                 >
                   Cancel
                 </Button>

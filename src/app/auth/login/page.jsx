@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { BiLogIn } from "react-icons/bi";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
 import {
   Button,
   Description,
@@ -23,14 +22,10 @@ const LogInPage = () => {
           className="object-cover rounded-r-4xl"
         />
 
-        <div className="relative z-10 flex items-center gap-3">
-          <Image src={logo} alt="QurbaniHat Logo" width={60} height={60} />
-
-          <p className="text-white font-bold text-lg">QurbaniHat</p>
-        </div>
+        <p className="relative z-10 font-bold text-xl">QurbaniHat</p>
 
         <div className="relative z-10">
-          <h2 className="text-white text-3xl font-bold mb-3">
+          <h2 className="text-3xl font-bold mb-3">
             Your Trusted <br /> Qurbani Marketplace
           </h2>
           <p className="text-sm font-semibold">
@@ -61,7 +56,7 @@ const LogInPage = () => {
               }}
             >
               <Label>Email</Label>
-              <Input placeholder="john@example.com" />
+              <Input placeholder="you@example.com" />
               <FieldError />
             </TextField>
 

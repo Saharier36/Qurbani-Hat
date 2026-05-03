@@ -30,10 +30,7 @@ const Hero = () => {
 
             <div className="flex gap-4">
               <Link href="/animals">
-                <Button
-                  className="bg-orange-600 text-white font-bold px-8 h-12 text-lg hover:bg-orange-700"
-                  radius="sm"
-                >
+                <Button className="bg-orange-600 px-8 h-12 text-lg hover:bg-orange-700">
                   Browse Animals
                 </Button>
               </Link>

@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="hidden md:flex items-center font-medium text-gray-600 border rounded-full px-2 py-1.5 gap-4 bg-orange-50 shadow-inner">
+        <ul className="hidden md:flex items-center font-medium text-gray-600 border rounded-full px-2 py-1.5 gap-4 bg-[#F7F1E1] shadow-inner">
           <li>
             <NavLinks href="/">Home</NavLinks>
           </li>
@@ -70,7 +70,7 @@ const Navbar = () => {
 
               <Link href="/auth/register">
                 <Button className="bg-orange-600 hover:bg-orange-700">
-                  <span className="hidden sm:inline">Register</span>
+                  <span className="hidden sm:inline">Sign Up</span>
                   <PersonPlus className="sm:hidden" />
                 </Button>
               </Link>

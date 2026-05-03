@@ -7,11 +7,16 @@ import {
   Description,
   FieldError,
   Input,
+  InputGroup,
   Label,
   TextField,
 } from "@heroui/react";
+import { Eye, EyeSlash } from "@gravity-ui/icons";
+import { useState } from "react";
 
 const LogInPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="min-h-screen flex">
       <div className="hidden lg:flex lg:w-[44%] relative flex-col justify-between p-10">
@@ -59,12 +64,10 @@ const LogInPage = () => {
               <Input placeholder="you@example.com" />
               <FieldError />
             </TextField>
-
             <TextField
               isRequired
               minLength={8}
               name="password"
-              type="password"
               validate={(value) => {
                 if (value.length < 8) {
                   return "Password must be at least 8 characters";
@@ -79,7 +82,27 @@ const LogInPage = () => {
               }}
             >
               <Label>Password</Label>
-              <Input placeholder="Enter your password" />
+              <InputGroup>
+                <InputGroup.Input
+                  type={isVisible ? "text" : "password"}
+                  placeholder="Enter your password"
+                />
+                <InputGroup.Suffix className="pr-0">
+                  <Button
+                    isIconOnly
+                    aria-label={isVisible ? "Hide password" : "Show password"}
+                    size="sm"
+                    variant="ghost"
+                    onPress={() => setIsVisible(!isVisible)}
+                  >
+                    {isVisible ? (
+                      <Eye className="size-4" />
+                    ) : (
+                      <EyeSlash className="size-4" />
+                    )}
+                  </Button>
+                </InputGroup.Suffix>
+              </InputGroup>
               <Description>
                 Must be at least 8 characters with 1 uppercase and 1 number
               </Description>

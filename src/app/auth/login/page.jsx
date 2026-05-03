@@ -6,6 +6,7 @@ import {
   Button,
   Description,
   FieldError,
+  Form,
   Input,
   InputGroup,
   Label,
@@ -13,9 +14,30 @@ import {
 } from "@heroui/react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import { useState } from "react";
+import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 const LogInPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+    const { email, password } = data;
+    const { data: res, error } = await authClient.signIn.email({
+      email: email,
+      password: password,
+      callbackURL: "/",
+    });
+
+    if (error) {
+      toast.error(error.message);
+      return;
+    } else toast.success("Account login successfully!");
+  };
+
 
   return (
     <div className="min-h-screen flex">
@@ -48,7 +70,10 @@ const LogInPage = () => {
             </p>
           </div>
 
-          <form className="space-y-5 border p-5 lg:p-10 shadow-2xl rounded-2xl">
+          <Form
+            onSubmit={onSubmit}
+            className="space-y-5 border p-5 lg:p-10 shadow-2xl rounded-2xl"
+          >
             <TextField
               isRequired
               name="email"
@@ -125,14 +150,17 @@ const LogInPage = () => {
               </Link>
             </div>
 
-            <Button className="w-full bg-emerald-700 hover:bg-emerald-800 rounded-xl">
+            <Button
+              type="submit"
+              className="w-full bg-emerald-700 hover:bg-emerald-800 rounded-xl"
+            >
               <BiLogIn className="w-4 h-4" />
               Sign In
             </Button>
 
             <div className="flex items-center gap-3">
               <span className="flex-1 h-px bg-gray-200" />
-              <span className="text-xs text-gray-400">or continue with</span>
+              <span className="text-xs text-gray-400">or</span>
               <span className="flex-1 h-px bg-gray-200" />
             </div>
 
@@ -155,9 +183,9 @@ const LogInPage = () => {
                   fill="#EA4335"
                 />
               </svg>
-              Sign In with Google
+              Continue with Google
             </Button>
-          </form>
+          </Form>
 
           <p className="text-center text-sm text-gray-500 mt-6">
             Don&apos;t have an account?{" "}

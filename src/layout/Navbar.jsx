@@ -35,7 +35,7 @@ const Navbar = () => {
           </button>
 
           <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} alt="QurbaniHat Logo" height={50} width={50} />
+            <Image src={logo} alt="QurbaniHat Logo" height={35} width={35} />
             <span className="text-xl font-bold text-orange-600">
               Qurbani<span className="text-gray-800">Hat</span>
             </span>

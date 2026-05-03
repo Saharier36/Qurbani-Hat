@@ -2,6 +2,11 @@ import AnimalList from "@/components/ui/AnimalList";
 import { getAnimals } from "@/service/api";
 import React from "react";
 
+export const metadata = {
+  title: "QurbaniHat - All Animals",
+  description: "Your trusted Qurbani marketplace",
+};
+
 const AllAnimalsPage = async () => {
   const animals = await getAnimals();
 

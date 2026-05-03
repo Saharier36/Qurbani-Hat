@@ -4,6 +4,15 @@ import { MapPin } from "@gravity-ui/icons";
 import { Chip } from "@heroui/react";
 import Image from "next/image";
 
+export const generateMetadata = async ({ params }) => {
+  const { id } = await params;
+  const animal = await getAnimalDetails(id);
+  return {
+    name: animal.name,
+    description: animal.description,
+  };
+};
+
 const AnimalDetailsPage = async ({ params }) => {
   const { id } = await params;
   const animal = await getAnimalDetails(id);
@@ -21,7 +30,9 @@ const AnimalDetailsPage = async ({ params }) => {
         <div className="container mx-auto mb-10 text-center">
           <h2 className="text-3xl font-bold text-slate-800">
             Reserve Your Animal{" "}
-            <span className="text-orange-500 italic">Before It&apos;s Gone</span>
+            <span className="text-orange-500 italic">
+              Before It&apos;s Gone
+            </span>
           </h2>
           <p className="text-slate-500 mt-1">
             Limited stock available. Book now and celebrate Eid with confidence.

@@ -8,7 +8,7 @@ export const generateMetadata = async ({ params }) => {
   const { id } = await params;
   const animal = await getAnimalDetails(id);
   return {
-    name: animal.name,
+    title: animal.name,
     description: animal.description,
   };
 };

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-40 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md shadow-sm">
-      <div className="flex h-16 items-center justify-between px-6 container mx-auto">
+      <div className="flex h-16 items-center justify-between px-4 container mx-auto">
         <div className="flex items-center gap-3">
           <button
             className="md:hidden p-1 rounded-md hover:bg-gray-100 transition"
@@ -53,10 +53,7 @@ const Navbar = () => {
                   alt="user-avatar"
                 />
               </Avatar>
-              <Button
-                className="font-semibold text-white bg-orange-600 hover:bg-orange-700"
-                radius="md"
-              >
+              <Button className="bg-orange-600 hover:bg-orange-700">
                 Logout
               </Button>
             </div>
@@ -65,20 +62,16 @@ const Navbar = () => {
               <Link href="/auth/login">
                 <Button
                   variant="light"
-                  className="font-semibold text-gray-700 hover:text-orange-600"
-                  radius="md"
+                  className="text-gray-700 hover:text-orange-600"
                 >
                   Login
                 </Button>
               </Link>
 
               <Link href="/auth/register">
-                <Button
-                  className="font-semibold text-white bg-orange-600 hover:bg-orange-700"
-                  radius="md"
-                >
+                <Button className="bg-orange-600 hover:bg-orange-700">
                   <span className="hidden sm:inline">Register</span>
-                  <PersonPlus className="sm:hidden" size={18} />
+                  <PersonPlus className="sm:hidden" />
                 </Button>
               </Link>
             </div>

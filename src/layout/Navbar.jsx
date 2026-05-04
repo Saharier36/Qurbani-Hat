@@ -6,15 +6,25 @@ import { Bars, PersonPlus, Xmark } from "@gravity-ui/icons";
 import Image from "next/image";
 import NavLinks from "@/components/ui/NavLinks";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   const userData = authClient.useSession();
   const user = userData.data?.user;
 
   const signOut = async () => {
-    await authClient.signOut();
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/auth/login");
+          toast.success("Logout successfully");
+        },
+      },
+    });
   };
 
   return (

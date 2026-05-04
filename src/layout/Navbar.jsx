@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Button, Avatar, Spinner } from "@heroui/react";
+import { Button, Avatar, Dropdown, Label } from "@heroui/react";
 import { Bars, PersonPlus, Xmark } from "@gravity-ui/icons";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
 import NavLinks from "@/components/ui/NavLinks";
 import { authClient } from "@/lib/auth-client";
 
@@ -22,20 +21,47 @@ const Navbar = () => {
     <nav className="sticky top-0 z-40 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="flex h-16 items-center justify-between px-4 container mx-auto">
         <div className="flex items-center gap-3">
-          <button
-            className="md:hidden p-1 rounded-md hover:bg-gray-100 transition"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <Xmark size={20} className="text-gray-700" />
-            ) : (
-              <Bars size={20} className="text-gray-700" />
-            )}
-          </button>
+          <div className="md:hidden">
+            <Dropdown onOpenChange={setIsMenuOpen}>
+              <Button
+                isIconOnly
+                aria-label="Menu"
+                variant="secondary"
+                className="bg-orange-100 text-orange-600"
+              >
+                {isMenuOpen ? <Xmark /> : <Bars />}
+              </Button>
+              <Dropdown.Popover className="min-w-55">
+                <Dropdown.Menu>
+                  <Dropdown.Section>
+                    <Dropdown.Item href="/" className="hover:bg-orange-100">
+                      <Label>Home</Label>
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      href="/animals"
+                      className="hover:bg-orange-100"
+                    >
+                      <Label>All Animals</Label>
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      href="/profile"
+                      className="hover:bg-orange-100"
+                    >
+                      <Label>Profile</Label>
+                    </Dropdown.Item>
+                  </Dropdown.Section>
+                </Dropdown.Menu>
+              </Dropdown.Popover>
+            </Dropdown>
+          </div>
 
           <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} alt="QurbaniHat Logo" height={35} width={35} />
+            <Image
+              src="/logo.png"
+              alt="QurbaniHat Logo"
+              height={35}
+              width={35}
+            />
             <span className="text-xl font-bold text-orange-600">
               Qurbani<span className="text-gray-800">Hat</span>
             </span>
@@ -75,11 +101,11 @@ const Navbar = () => {
               </Button>
             </div>
           ) : (
-            <div>
+            <div className="flex gap-2">
               <Link href="/auth/login">
                 <Button
-                  variant="light"
-                  className="text-gray-700 hover:text-orange-600"
+                  variant="outline"
+                  className="border-orange-600 hover:bg-orange-50"
                 >
                   Login
                 </Button>
@@ -95,31 +121,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white shadow">
-          <ul className="flex flex-col p-4 gap-1 font-medium text-gray-700">
-            <li>
-              <Link
-                href="/"
-                onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md hover:bg-orange-50 hover:text-orange-600"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/animals"
-                onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md hover:bg-orange-50 hover:text-orange-600"
-              >
-                All Animals
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
     </nav>
   );
 };

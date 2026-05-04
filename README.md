@@ -71,10 +71,9 @@ To run this project locally, follow these steps:
 ## 📂 Project Structure
 ```text
 b13-a8-qurbani-hat/
-├── public/              # Static assets (images, icons)
+├── public/              # Static assets (logo)
 ├── src/
 │   ├── app/             # Next.js App Router (Pages, API routes)
-│   ├── assets/          # Project assets
 │   ├── components/      # Reusable React components
 │   ├── layout/          # Layout components (Navbar, Footer)
 │   ├── lib/             # Utility functions and configurations

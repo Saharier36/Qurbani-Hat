@@ -2,18 +2,26 @@
   <h1>🐮 Qurbani-Hat</h1>
   <p>Your Trusted Digital Marketplace for Qurbani Animals</p>
 
-  [![Live Preview](https://img.shields.io/badge/Live_Preview-Visit_Now-success?style=for-the-badge&logo=vercel)](https://qurbani-hat-pied.vercel.app/)
+[![Live Preview](https://img.shields.io/badge/Live_Preview-Visit_Now-success?style=for-the-badge&logo=vercel)](https://qurbani-hat-pied.vercel.app/)
+
 </div>
 
 <br />
 
 ## 📖 About the Project
+
 **Qurbani-Hat** is a modern web application designed to simplify the process of finding and purchasing animals for Qurbani (Eid-ul-Adha). By bridging the gap between buyers and sellers, it provides a seamless, secure, and user-friendly platform to explore detailed animal listings, discover top breeds, and gain valuable insights through Qurbani tips.
 
 ## 🚀 Live URL
+
 Experience the platform here: [Qurbani-Hat Live](https://qurbani-hat-pied.vercel.app/)
 
+## 🔌 API Server
+
+Base URL: [https://qurbani-hat-server.onrender.com](https://qurbani-hat-server.onrender.com)
+
 ## ✨ Key Features
+
 - **Browse Animals:** Explore featured animals and top breeds available for purchase.
 - **Detailed Listings:** View comprehensive details about specific animals to make informed decisions.
 - **Secure Authentication:** User registration and login securely managed using `better-auth`.
@@ -24,36 +32,44 @@ Experience the platform here: [Qurbani-Hat Live](https://qurbani-hat-pied.vercel
 - **Smooth Animations:** Engaging UI interactions driven by `@react-spring/web`.
 
 ## 📦 Tech Stack & NPM Packages
+
 This project leverages modern web technologies to ensure high performance and an excellent user experience.
 
 ### Core Framework
+
 - [Next.js](https://nextjs.org/) (v16.2.4)
 - [React](https://react.dev/) & React DOM (v19.2.4)
 
 ### Authentication & Database
+
 - [Better Auth](https://better-auth.com/) (`better-auth`, `@better-auth/mongo-adapter`)
 - [MongoDB](https://www.mongodb.com/) (`mongodb`)
 
 ### UI & Styling
+
 - [HeroUI](https://heroui.com/) (`@heroui/react`, `@heroui/styles`)
 - [Tailwind CSS](https://tailwindcss.com/) (`tailwindcss`, `@tailwindcss/postcss`)
 - [React Spring](https://reactspring.dev/) (`@react-spring/web`)
 
 ### Utilities & Icons
+
 - [React Hot Toast](https://react-hot-toast.com/) (`react-hot-toast`)
 - [React Icons](https://react-icons.github.io/react-icons/) (`react-icons`)
 - [Gravity UI Icons](https://gravity-ui.com/icons) (`@gravity-ui/icons`)
 
 ## 🛠️ Getting Started
+
 To run this project locally, follow these steps:
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/Saharier36/Qurbani-Hat.git
    cd b13-a8-qurbani-hat
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
@@ -62,6 +78,7 @@ To run this project locally, follow these steps:
    Create a `.env.local` file in the root directory and add your necessary environment variables (like MongoDB URI, Better Auth secrets, etc.).
 
 4. **Run the development server:**
+
    ```bash
    npm run dev
    ```
@@ -69,6 +86,7 @@ To run this project locally, follow these steps:
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application running.
 
 ## 📂 Project Structure
+
 ```text
 b13-a8-qurbani-hat/
 ├── public/              # Static assets (logo)
@@ -85,6 +103,7 @@ b13-a8-qurbani-hat/
 ```
 
 ## 🧑‍💻 Author
+
 **Saharier Omi**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saharier-omi/)
